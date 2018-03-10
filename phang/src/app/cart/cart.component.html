@@ -1,0 +1,54 @@
+<div *ngIf="showSpinner" class="spin-center">
+  <load-spinner></load-spinner>
+</div>
+
+
+<section class="bg-image">
+    <h1 class="bg-title">CART</h1>
+</section>
+<section class="main-section">
+
+    <div class="container">
+        <table class="shop-cart table">
+          <tr class="table-head">
+            <th class="col-1"></th>
+            <th class="col-2">Product</th>
+            <th class="col-3">Price</th>
+            <th class="col-4">Quantity</th>
+            <th class="col-5">Total</th>
+            <th class="col-6">Remove</th>
+          </tr>
+
+          <tr class="table-row" *ngFor="let item of cartItems">
+              <td>
+                <div class="cart-img">
+                  <img src="../assets/images/mobiles/thumb/{{item.image}}" >
+                </div>
+              </td>
+              <td>{{item.name}}</td>
+              <td>₹{{item.price}}</td>
+              <td>
+                <span>
+                  <button [disabled]="item.quantity == 1 " class="btn"
+                  (click)="quantityUpdate(item.product_id, -1)">
+                      <span class="minus"><b>-</b></span>
+                  </button>
+                </span><span>{{item.quantity}}</span>
+                <span>
+                  <button class="btn" (click)="quantityUpdate(item.product_id, 1)">
+                      <span class="minus"><b>+</b></span>
+                  </button>
+                </span>
+              </td>
+              <td>₹{{item.price * item.quantity}}</td>
+              <td>
+                <a class="btn btn-danger" (click)="itemDelete(item.product_id)">
+                 <span class="glyphicon glyphicon-remove"></span> Remove
+               </a>
+              </td>
+
+          </tr>
+        </table>
+
+</div>
+</section>

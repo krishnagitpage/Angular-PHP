@@ -1,0 +1,68 @@
+<section class="bg-image">
+    <h1 class="bg-title">CONTACT</h1>
+</section>
+<section class="main-section">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12  margin-bottom-25">
+            <img src="../assets/images/contact.jpg" class="img-responsive">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12  margin-bottom-25">
+            <form #contactForm="ngForm">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="name" placeholder="Name"
+                      required minlength="4" #name="ngModel"
+                      ngModel>
+                      <div *ngIf="name.errors && (name.dirty || name.touched)">
+                          <div [hidden]="!name.errors.required" class="alert alert-danger form-alert">
+                              Please enter a name.
+                          </div>
+                          <div [hidden]="!name.errors.minlength" class="alert alert-danger form-alert">
+                              Enter name greater than 4 characters.
+                          </div>
+                      </div>
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="phone" placeholder="Phone"
+                      required minlength="10" #phoneRef="ngModel" ngModel>
+                      <div *ngIf="phoneRef.errors && (phoneRef.dirty || phoneRef.touched)">
+                          <div [hidden]="!phoneRef.errors.required" class="alert alert-danger form-alert">
+                              Please enter your phone number.
+                          </div>
+                          <div [hidden]="!phoneRef.errors.minlength" class="alert alert-danger form-alert">
+                              Enter name greater than 4 characters.
+                          </div>
+                      </div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" placeholder="Email"
+                      required #emailRef="ngModel" ngModel>
+
+                      <div *ngIf="emailRef.errors?.required && emailRef.touched" >
+                            <div class="alert alert-danger form-alert">
+                                Enter Email Id
+                            </div>
+                      </div>
+                </div>
+                <div class="form-group">
+                  <textarea name="message" class="form-control"
+                    #message="ngModel" ngModel placeholder="message"
+                    required minlength="50" maxlength="250"></textarea>
+
+                      <div *ngIf="message.errors && (message.dirty || message.touched)" >
+                            <div [hidden]="!message.errors.required" class="alert alert-danger form-alert">
+                                This field cannot be left blank
+                            </div>
+                            <div [hidden]="!message.errors.minlength" class="alert alert-danger form-alert">
+                                Enter message above 50 characters
+                            </div>
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="form-button">Submit</button>
+                      </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</section>

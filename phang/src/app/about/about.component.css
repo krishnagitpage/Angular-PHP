@@ -1,0 +1,33 @@
+.bg-image{
+    background:url(../../assets/images/about.jpg);
+    background-repeat:no-repeat;
+    background-attachment:none;
+    background-size:cover;
+        background-position: center 0;
+    min-height:239px;
+    width:100%;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+
+}
+.bg-title{
+  text-align: center;
+  font-weight: 900;
+  color:white;
+  font-size: 50px;
+  letter-spacing: 0.6px;
+}
+ul{
+  border-left: 5px solid #efefef;
+  margin:15px;
+  padding-left :30px;
+}
+ul li{
+  margin-bottom:15px;
+  list-style-type: none;
+}
+.main-section{
+  margin-bottom: 35px;
+}

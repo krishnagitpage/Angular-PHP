@@ -1,0 +1,38 @@
+
+  <nav class="navbar navbar-expand-lg navbar-fixed-top">
+    <div class="container-fluid menu-container">
+    <button type="button" class="navbar-toggle collapsed toggle-button"
+        data-toggle="collapse" data-target="#main-menu">
+      <img src="../assets/images/cd-menu.svg">
+    </button>
+    <div class="navbar-header">
+
+      <a class="navbar-brand" [routerLink]="['/']"><img src="../assets/images/cd-logo.svg"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-menu">
+      <ul class="nav navbar-nav navbar-center">
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/']">Home</a></li>
+        <li class="nav-item"><a  class="nav-link" [routerLink]="['/about']">About</a></li>
+        <li class="nav-item">
+          <a  class="nav-link"  [routerLink]="['/mobiles']">Products</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/contact']">Contact</a></li>
+      </ul>
+  </div>
+
+  <ul class="nav navbar-nav navbar-right cart-nav">
+   <li class="nav-item">
+     <a [routerLink]="['/mobiles']" >
+       <img src="../assets/images/icon-header-01.png"></a>
+
+   </li>
+   <li class="nav-item">
+       <a [routerLink]="['/cart']">
+         <img src="../assets/images/icon-header-02.png"></a>
+
+   </li>
+ </ul>
+
+  </div>
+</nav>
